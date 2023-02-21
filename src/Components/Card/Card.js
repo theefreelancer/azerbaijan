@@ -1,25 +1,17 @@
 import React from "react";
-import CardImage from "./CardImage";
+import { cardImage } from "./CardContent";
 import CardContent from "./CardContent";
 
-function Card(props) {
+function Card() {
+  // This card component contains the main components that are bundled together.
+  // This includes both the image, and the text values that are separate.
   return (
-    <div style={{ width: props.width + "px" }}>
+    <div style={{ width: 20 + "px" }}>
       <div className="styleCard">
-        <CardImage image={props.image} width={props.width} />
-        <CardContent
-          title={props.title}
-          location={props.location}
-          description={props.description}
-        />
+        <CardContent image={{ cardImage }} />
       </div>
     </div>
   );
 }
-Card.defaultProps = {
-  width: 350,
-  title: "Template - Card Title",
-  location: "Location label",
-  description: "Template description textbox",
-};
+
 export default Card;
